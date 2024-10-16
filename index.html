@@ -69,10 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="test.md-page" class="h-entry article article-type-test.md" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/10/16/test/" class="article-date">
-  <time class="dt-published" datetime="2024-10-16T15:14:03.687Z" itemprop="datePublished">2024-10-16</time>
+    <a href="/2024/10/17/page/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T16:03:58.000Z" itemprop="datePublished">2024-10-17</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/16/test/">（一）项目记录</a>
+      <a class="p-name article-title" href="/2024/10/17/page/">page</a>
     </h1>
   
 
@@ -91,25 +91,55 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://uphome.github.io/2024/10/17/page/" data-id="cm2c2cjkg0001fsvtbizubrnr" data-title="page" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/16/test/" class="article-date">
+  <time class="dt-published" datetime="2024-10-16T15:14:03.687Z" itemprop="datePublished">2024-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
         <h1 id="简易HIS信息系统"><a href="#简易HIS信息系统" class="headerlink" title="简易HIS信息系统"></a>简易HIS信息系统</h1><hr>
 <h4 id="项目描述："><a href="#项目描述：" class="headerlink" title="项目描述："></a>项目描述：</h4><p>这是一个简单的“医院挂号收费开药信息系统（Hospital Information System）简称HIS系统）”。<br>具有挂号 开药 诊断等基础功能。前端界面的设计也是能看就行。</p>
 <hr>
-<h4 id="相关说明："><a href="#相关说明：" class="headerlink" title="相关说明："></a>相关说明：</h4><blockquote>
-<p>涉及语言：python HTML5<br>框架搭建：Flask<br>数据存储：SQLsever</p>
-</blockquote>
+<h4 id="相关说明："><a href="#相关说明：" class="headerlink" title="相关说明："></a>相关说明：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">涉及语言：python HTML5  </span><br><span class="line">框架搭建：Flask  </span><br><span class="line">数据存储：SQLsever</span><br></pre></td></tr></table></figure>
+
+
 <h4 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h4><p>整个项目由五个部分组成：<em>登录</em>，<em>收费</em>，<em>医生</em>，<em>检验</em>，<em>药房管理</em>，以及<em>用户管理</em>。</p>
 <hr>
 <h2 id="登录："><a href="#登录：" class="headerlink" title="登录："></a>登录：</h2><p>从前端获得输入的数据，然后进行逻辑判断。<br>逻辑判断需要判断用户名与密码是否匹配以及验证码验证。</p>
 <h3 id="判断逻辑："><a href="#判断逻辑：" class="headerlink" title="判断逻辑："></a>判断逻辑：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> Uer = UserSet.Getuser();</span><br><span class="line">username = request.form[<span class="string">&#x27;username&#x27;</span>]</span><br><span class="line">password = request.form[<span class="string">&#x27;password&#x27;</span>]</span><br><span class="line">Kind = request.form[<span class="string">&#x27;Kind&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> Uer.keys():</span><br><span class="line">    <span class="keyword">if</span> Kind == index:</span><br><span class="line">        <span class="keyword">for</span> index1 <span class="keyword">in</span> Uer[index].keys():</span><br><span class="line">            <span class="keyword">if</span> index1 == username <span class="keyword">and</span> Uer[index][index1] == password:</span><br><span class="line">                url_array = [<span class="string">&#x27;All_bp.Toll&#x27;</span>,</span><br><span class="line">                             <span class="string">&#x27;All_bp.Doctor&#x27;</span>,</span><br><span class="line">                             <span class="string">&#x27;All_bp.Inspection&#x27;</span>,</span><br><span class="line">                             <span class="string">&#x27;All_bp.Pharmacy&#x27;</span>,</span><br><span class="line">                             <span class="string">&#x27;All_bp.superuser&#x27;</span>]</span><br><span class="line">                <span class="keyword">return</span> redirect(url_for(url_array[<span class="built_in">int</span>(Kind)]))  <span class="comment"># 输入的密码与验证码正确 则跳转到相应的板块</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="验证码实现："><a href="#验证码实现：" class="headerlink" title="验证码实现："></a>验证码实现：</h3><p>同时需要对输入的验证码进行对比。验证码是先生成五个字符，然后根据文本生成图片。字体文件直接在网上找的。并不复杂,挡不住图片识别。</p>
-<p><strong>效果如下图：</strong><br><img src="C:\Users\huwang\Downloads\1728977354342.png" alt="img.png"></p>
+<p><strong>效果如下图：</strong><br><img alt="img.png" src="C:\Users\huwang\Downloads\1728977354342.png"/></p>
 <p><strong>代码实现</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generate_captcha</span>(<span class="params">size=(<span class="params"><span class="number">120</span>, <span class="number">40</span></span>), chars=string.ascii_letters + string.digits, captcha_length=<span class="number">5</span></span>):</span><br><span class="line">    <span class="comment"># 随机生成验证码文本</span></span><br><span class="line">    captcha_text = <span class="string">&#x27;&#x27;</span>.join(random.choice(chars) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(captcha_length))</span><br><span class="line">    <span class="comment"># 创建一个新图片</span></span><br><span class="line">    image = Image.new(<span class="string">&#x27;RGB&#x27;</span>, size, (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">    draw = ImageDraw.Draw(image)</span><br><span class="line">    font = ImageFont.truetype(<span class="string">&quot;chaptcha_ttf\imageCaptchaFont.ttf&quot;</span>, <span class="number">24</span>)</span><br><span class="line">    <span class="comment"># 绘制文本</span></span><br><span class="line">    draw.text((<span class="number">10</span>, <span class="number">10</span>), captcha_text, font=font, fill=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">    <span class="comment">#draw.text((10, 10), captcha_text, fill=(0, 0, 0))</span></span><br><span class="line">    <span class="comment"># 添加一些噪点</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">25</span>):</span><br><span class="line">        draw.point((random.randint(<span class="number">0</span>, size[<span class="number">0</span>]), random.randint(<span class="number">0</span>, size[<span class="number">1</span>])), fill=(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">    image = image.<span class="built_in">filter</span>(ImageFilter.GaussianBlur(radius=<span class="number">1.5</span>))</span><br><span class="line">    <span class="keyword">return</span> image, captcha_text</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>改进：这里逻辑判断是自己写的，不过可以用<strong>Flask</strong>自带的这方面的，可能考虑到的情况更加的全以及安全性更高。<br>同时，验证码的字体也可以用稍微复杂的。验证方式 也可<strong>邮件</strong>验证码或者<strong>短信</strong>验证码。</p>
-</blockquote>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">改进：这里逻辑判断是自己写的，不过可以用**Flask**自带的这方面的，可能考虑到的情况更加的全以及安全性更高。</span><br><span class="line">同时，验证码的字体也可以用稍微复杂的。验证方式 也可**邮件**验证码或者**短信**验证码。</span><br></pre></td></tr></table></figure>
+
+
 <hr>
 <h2 id="收费"><a href="#收费" class="headerlink" title="收费"></a>收费</h2><p>我觉得在我现有的知识基础下，这个部分是最难写的。为了功能的写出，也是采用了不太优美的方法。</p>
 <h3 id="挂号："><a href="#挂号：" class="headerlink" title="挂号："></a>挂号：</h3><p>这里直接从前端获得数据之后，需要将挂号的数据写入到数据库中，使用了<code>pyodbc</code>来对<br>SQLsever进行读写操作。</p>
@@ -151,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://uphome.github.io/2024/10/16/test/" data-id="cm2c0la3h00017gvt2fj4fvu1" data-title="（一）项目记录" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://uphome.github.io/2024/10/16/test/" data-id="cm2c2cjkj0003fsvt2mbx538l" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -189,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://uphome.github.io/2024/10/15/hello-world/" data-id="cm2c0la3a00007gvt17rx3hws" data-title="for test" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://uphome.github.io/2024/10/15/hello-world/" data-id="cm2c2cjki0002fsvt11ii7ngn" data-title="for test" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -232,7 +262,11 @@
       <ul>
         
           <li>
-            <a href="/2024/10/16/test/">（一）项目记录</a>
+            <a href="/2024/10/17/page/">page</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/16/test/">(no title)</a>
           </li>
         
           <li>
