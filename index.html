@@ -79,23 +79,43 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/15/hello-world/">Hello Girls</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="HJT-WMZ"><a href="#HJT-WMZ" class="headerlink" title="HJT WMZ"></a>HJT WMZ</h2><h3 id="小兔子乖乖-把门开开"><a href="#小兔子乖乖-把门开开" class="headerlink" title="小兔子乖乖 把门开开"></a>小兔子乖乖 把门开开</h3>
+        <h2 id="Wmz"><a href="#Wmz" class="headerlink" title="Wmz"></a>Wmz</h2><p>print(request.method)<br>    if ‘GET’ &#x3D;&#x3D; request.method:<br>        datas &#x3D; GetData.Getdata(‘loginuser’, [‘name’, ‘password’, ‘kind’])<br>        dic &#x3D; {0: ‘收费人员’, 1: ‘医生’, 2: ‘检验科室人员’, 3: ‘药房人员’, 4: ‘系统超级用户’, }<br>        for data in datas:<br>            data[‘kind’] &#x3D; dic[int(data[‘kind’].strip())]<br>            data[‘name’] &#x3D; data[‘name’].strip()<br>            data[‘password’] &#x3D; data[‘password’].strip()<br>        return render_template(‘superuser.html’, datas&#x3D;datas)<br>    if ‘POST’ &#x3D;&#x3D; request.method:<br>        if ‘signup’ in request.form:<br>            username &#x3D; request.form[‘username’]<br>            password &#x3D; request.form[‘password’]<br>            print(username)<br>            print(password)<br>            Kind &#x3D; request.form[‘Kind’]<br>            print(Kind)</p>
+<pre><code>        if username != &#39;&#39; and password != &#39;&#39; and int(Kind) != &#39;&#39; and 4 &gt;= int(Kind) &gt;= 0:
+            print(&#39;格式合格&#39;)
+            if UserSet.Adduser(username, password, Kind):
+                flash(&quot;成功注册&quot;)
+                datas = GetData.Getdata(&#39;loginuser&#39;, [&#39;name&#39;, &#39;password&#39;, &#39;kind&#39;])
+                dic = &#123;0: &#39;收费人员&#39;, 1: &#39;医生&#39;, 2: &#39;检验科室人员&#39;, 3: &#39;药房人员&#39;, 4: &#39;系统超级用户&#39;, &#125;
+                for data in datas:
+                    data[&#39;kind&#39;] = dic[int(data[&#39;kind&#39;].strip())]
+                    data[&#39;name&#39;] = data[&#39;name&#39;].strip()
+                    data[&#39;password&#39;] = data[&#39;password&#39;].strip()
+                print(datas)
+                return render_template(&#39;superuser.html&#39;, datas=datas)
+
+            else:
+                flash(&quot;注册失败&quot;)
+
+
+        else:
+            flash(&quot;请按照格式进行注册！&quot;)
+    else:
+        datas = GetData.Getdata(&#39;loginuser&#39;, [&#39;name&#39;, &#39;password&#39;, &#39;kind&#39;])
+        dic = &#123;0: &#39;收费人员&#39;, 1: &#39;医生&#39;, 2: &#39;检验科室人员&#39;, 3: &#39;药房人员&#39;, 4: &#39;系统超级用户&#39;, &#125;
+        for data in datas:
+            data[&#39;kind&#39;] = dic[int(data[&#39;kind&#39;].strip())]
+            data[&#39;name&#39;] = data[&#39;name&#39;].strip()
+            data[&#39;password&#39;] = data[&#39;password&#39;].strip()
+        print(datas)
+return render_template(&#39;superuser.html&#39;)
+</code></pre>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://uphome.github.io/2024/10/15/hello-world/" data-id="cm2amvixu0000ysvt4w5wggb6" data-title="Hello Girls" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://uphome.github.io/2024/10/15/hello-world/" data-id="cm2an3t4k0000oovt2xi04pcz" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -138,7 +158,7 @@
       <ul>
         
           <li>
-            <a href="/2024/10/15/hello-world/">Hello Girls</a>
+            <a href="/2024/10/15/hello-world/">(no title)</a>
           </li>
         
       </ul>
